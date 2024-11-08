@@ -1,3 +1,4 @@
+using from '@sap/cds-common-content';
 using { cuid, managed, Country} from '@sap/cds/common';
 
 service bookshop{
