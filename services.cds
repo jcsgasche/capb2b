@@ -10,7 +10,3 @@ service bookshop{
         countryOfBirth: Country;
     }
 }
-
-service projectionService{
-    entity bookProjections as projection on bookshop.Books;
-}
