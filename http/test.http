@@ -1,0 +1,44 @@
+###
+# @name BooksQuery
+GET http://localhost:4004/odata/v4/bookshop/Books
+###
+
+###
+# @name AuthorsQuery
+GET http://localhost:4004/odata/v4/bookshop/Authors
+###
+
+###
+# @name GetSpecificBookQuery
+@book_ID = {{ BooksQuery.response.body.value[2].ID }}
+GET http://localhost:4004/odata/v4/bookshop/Books/{{book_ID}}
+### 
+
+###
+# @name GetSpecificBookQueryParForUUID
+@book_ID = {{ BooksQuery.response.body.value[2].ID }}
+GET http://localhost:4004/odata/v4/bookshop/Books('{{book_ID}}')
+### 
+
+###
+# @name GetSpecificBookQueryParForInt
+@book_ID = {{ BooksQuery.response.body.value[2].ID }}
+GET http://localhost:4004/odata/v4/bookshop/Books({{book_ID}})
+### 
+
+
+###
+# @name DeleteSpecificBookQuery
+@book_ID = {{ BooksQuery.response.body.value[2].ID }}
+DELETE http://localhost:4004/odata/v4/bookshop/Books({{book_ID}})
+### 
+
+###
+# @name CreateNewBook
+@serviceName = bookshop
+POST http://localhost:4004/odata/v4/{{serviceName}}/Books
+Content-Type: application/json
+
+{"title": "Awesome Book 2"}
+
+###
