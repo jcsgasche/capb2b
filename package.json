@@ -18,8 +18,8 @@
   },
     "cds": { "requires": {
       "db": {
-        "kind": "sqlite",
-        "credentials": { "url": "bookshop.sqlite" } 
+        "[mem]": { "kind": "sqlite", "credentials": { "url": ":memory:" } },
+        "[development]": { "kind": "sqlite", "credentials": { "url": "bookshop.sqlite" } } 
       }
     }
   }
