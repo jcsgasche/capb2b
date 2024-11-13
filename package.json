@@ -7,7 +7,8 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^8",
-    "express": "^4"
+    "express": "^4",
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.7.0",
@@ -33,6 +34,12 @@
           "kind": "sqlite",
           "credentials": {
             "url": ":memory:"
+          }
+        },
+        "[testing]": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": "bookshop.sqlite"
           }
         }
       }
