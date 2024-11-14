@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 # Install some generally useful tools
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \
-    curl git sqlite3 entr source-highlight neovim build-essential procps file
+    curl git sqlite3 entr source-highlight neovim build-essential procps file xclip
     
 # brew
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
