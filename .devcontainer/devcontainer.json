@@ -16,5 +16,11 @@
     }
   },
   "forwardPorts": [ 4004 ],
-  "remoteUser": "node"
+  "remoteUser": "node",
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true
+},
+  "runArgs": ["--name", "capb2b"]
 }

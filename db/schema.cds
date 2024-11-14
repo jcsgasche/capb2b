@@ -8,7 +8,8 @@ entity cuid {
 
 entity Books: cuid {
     title: String;
-    author: Association to Authors;    
+    author: Association to Authors;
+    stock       : Integer;
     }
     
 entity Authors: cuid {
@@ -17,12 +18,17 @@ entity Authors: cuid {
 }
 
 entity Orders: cuid{ 
-    comment: String;
-    Items : Composition of many OrderItems on Items.parent = $self;
+    comment : String;
+    Items   : Composition of many {
+        key pos     : Integer;
+        quantity    : Integer;
+        book        : Association to Books;
+    };
 }
 
-entity OrderItems { // to be accessed through Orders only
-    key parent : Association to Orders;
-    key pos    : Integer;
-    quantity   : Integer;
-}
+// entity OrderItems { // to be accessed through Orders only
+//     key parent : Association to Orders;
+//     key pos    : Integer;
+//     quantity   : Integer;
+//     book: Association to Books;
+// }
